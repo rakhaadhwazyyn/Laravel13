@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\MahasiswaController;
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,3 +34,4 @@ Route::get('/index', function () {
     return view('halaman-matkul');
 });
 
+Route::get('/home',[HomeController::class,'index']);
