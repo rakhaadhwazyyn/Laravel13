@@ -83,8 +83,8 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="display-6 mb-2">{{$username}}</h1>
-            <p class="lead mb-0">{{$last_login}}</p>
+            <h1 class="display-6 mb-2">{{ $username }}</h1>
+            <p class="lead mb-0">{{ $last_login }}</p>
         </div>
     </section>
 
@@ -160,6 +160,29 @@
 
             <div class="col-md-6">
                 {{-- Alerts --}}
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Pertanyaan</h5>
+
+                        <form action="{{ route('question.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="form-control" name="nama">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                <textarea class="form-control" rows="4" name="pertanyaan"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                        </form>
+                    </div>
+                </div>
+                
                 <div class="card ">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Alerts</h3>
@@ -221,7 +244,8 @@
                             </table>
                         </div>
                         <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
-                            <code>.table-bordered</code> sesuai kebutuhan.</p>
+                            <code>.table-bordered</code> sesuai kebutuhan.
+                        </p>
                     </div>
                 </div>
             </div>
